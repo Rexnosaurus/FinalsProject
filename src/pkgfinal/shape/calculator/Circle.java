@@ -36,8 +36,8 @@ public class Circle extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         lblGiven = new javax.swing.JLabel();
         ftfGiven = new javax.swing.JFormattedTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnCalculate = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         lblAnswer = new javax.swing.JLabel();
@@ -87,17 +87,17 @@ public class Circle extends javax.swing.JInternalFrame {
         ftfGiven.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
         ftfGiven.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
 
-        jButton1.setText("Calculate");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCalculate.setText("Calculate");
+        btnCalculate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCalculateActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Clear");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnClearActionPerformed(evt);
             }
         });
 
@@ -115,9 +115,9 @@ public class Circle extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ftfGiven, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnCalculate, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(75, 75, 75))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(199, 199, 199)
@@ -141,8 +141,8 @@ public class Circle extends javax.swing.JInternalFrame {
                     .addComponent(ftfGiven, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnCalculate)
+                    .addComponent(btnClear))
                 .addGap(39, 39, 39))
         );
 
@@ -178,36 +178,37 @@ public class Circle extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
         ftfGiven.setText("");
-    }//GEN-LAST:event_jButton2ActionPerformed
+        lblAnswer.setText("Answer");
+    }//GEN-LAST:event_btnClearActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
         // TODO add your handling code here:
                 try {
-                    //For Rounding: https://stackoverflow.com/questions/28929105/jtextfield-to-display-only-2-decimal-places
+                    //For Rounding: https://stackoverflow.com/questions/2808535/round-a-double-to-2-decimal-places
                     //For Double Handler: https://stackoverflow.com/questions/49466030/how-to-convert-double-values-to-string-in-a-text-field
                     double radius = Double.parseDouble(ftfGiven.getText());
                     double diameter = radius * 2;
                     double circumference = 2 * Math.PI * radius;
                     double area = Math.PI * radius * radius;
                     
-                    lblAnswer.setText("<html>Diameter = " + df.format(evt) +
-                            "<br>Circumference = " + String.format("%.2f", area) +
-                            "<br>Area = " + String.format("%.2f", area) + "</html>");
+                    lblAnswer.setText("<html>Diameter = " + df.format(diameter) +
+                            "<br>Circumference = " + df.format(circumference) +
+                            "<br>Area = " + df.format(area) + "</html>");
                 } catch (NumberFormatException ex) {
                     lblAnswer.setText("Invalid radius. Please enter a number.");
                 }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnCalculateActionPerformed
 
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCalculate;
+    private javax.swing.JButton btnClear;
     private javax.swing.JFormattedTextField ftfGiven;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
