@@ -4,6 +4,9 @@
  */
 package pkgfinal.shape.calculator;
 
+import java.text.DecimalFormat;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author rexiepimentelMBP
@@ -16,6 +19,7 @@ public class Main extends javax.swing.JFrame {
     
     ShapesCalculatorUI shapesCalculatorUI = new ShapesCalculatorUI();
     ShapesFormula shapesFormula = new ShapesFormula();
+    DecimalFormat df = new DecimalFormat("#.00");
     
     public Main() {
         initComponents();
@@ -57,9 +61,22 @@ public class Main extends javax.swing.JFrame {
         btnCone = new javax.swing.JButton();
         btnSphere = new javax.swing.JButton();
         btnHemisphere = new javax.swing.JButton();
-        desktopPaneMain = new javax.swing.JDesktopPane();
-        jPanel1 = new javax.swing.JPanel();
+        panelShapeFormula = new javax.swing.JPanel();
         lblShapeFormula = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        lblSelectedShapeDiagram = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        lblGiven = new javax.swing.JLabel();
+        ftfGiven = new javax.swing.JFormattedTextField();
+        btnCalculate = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jPanel3 = new javax.swing.JPanel();
+        lblAnswer = new javax.swing.JLabel();
+        panelShapeName = new javax.swing.JPanel();
+        lblShapeName = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -337,47 +354,208 @@ public class Main extends javax.swing.JFrame {
         getContentPane().add(panelShapeSelection);
         panelShapeSelection.setBounds(0, 120, 200, 550);
 
-        desktopPaneMain.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout desktopPaneMainLayout = new javax.swing.GroupLayout(desktopPaneMain);
-        desktopPaneMain.setLayout(desktopPaneMainLayout);
-        desktopPaneMainLayout.setHorizontalGroup(
-            desktopPaneMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 948, Short.MAX_VALUE)
-        );
-        desktopPaneMainLayout.setVerticalGroup(
-            desktopPaneMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(desktopPaneMain);
-        desktopPaneMain.setBounds(200, 60, 950, 470);
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        panelShapeFormula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblShapeFormula.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         lblShapeFormula.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblShapeFormula.setText("Selected Shape Formula");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelShapeFormulaLayout = new javax.swing.GroupLayout(panelShapeFormula);
+        panelShapeFormula.setLayout(panelShapeFormulaLayout);
+        panelShapeFormulaLayout.setHorizontalGroup(
+            panelShapeFormulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShapeFormulaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblShapeFormula, javax.swing.GroupLayout.DEFAULT_SIZE, 936, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        panelShapeFormulaLayout.setVerticalGroup(
+            panelShapeFormulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelShapeFormulaLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(lblShapeFormula)
                 .addContainerGap(59, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(200, 530, 950, 140);
+        getContentPane().add(panelShapeFormula);
+        panelShapeFormula.setBounds(200, 530, 950, 140);
+
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel6.setForeground(new java.awt.Color(255, 255, 255));
+
+        lblSelectedShapeDiagram.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSelectedShapeDiagram.setText("Selected Shape Diagram");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addComponent(lblSelectedShapeDiagram, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(lblSelectedShapeDiagram, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(57, Short.MAX_VALUE))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jLabel2.setText("Choose a Calculation");
+
+        lblGiven.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblGiven.setText("given =");
+        lblGiven.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        ftfGiven.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ftfGiven.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        ftfGiven.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+
+        btnCalculate.setText("Calculate");
+        btnCalculate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateActionPerformed(evt);
+            }
+        });
+
+        btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Find Area", "Find Perimeter" }));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblGiven, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ftfGiven))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addComponent(btnCalculate, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(75, 75, 75))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(199, 199, 199)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGiven, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ftfGiven, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCalculate)
+                    .addComponent(btnClear))
+                .addGap(39, 39, 39))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblAnswer.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        lblAnswer.setForeground(new java.awt.Color(0, 0, 0));
+        lblAnswer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAnswer.setText("Answer");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(lblAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(69, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(lblAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 960, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 480, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, 0)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        getContentPane().add(jPanel5);
+        jPanel5.setBounds(200, 60, 950, 470);
+
+        lblShapeName.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        lblShapeName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblShapeName.setText("Selected Shape NAme");
+
+        javax.swing.GroupLayout panelShapeNameLayout = new javax.swing.GroupLayout(panelShapeName);
+        panelShapeName.setLayout(panelShapeNameLayout);
+        panelShapeNameLayout.setHorizontalGroup(
+            panelShapeNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelShapeNameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblShapeName, javax.swing.GroupLayout.DEFAULT_SIZE, 938, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        panelShapeNameLayout.setVerticalGroup(
+            panelShapeNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelShapeNameLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(lblShapeName)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(panelShapeName);
+        panelShapeName.setBounds(200, 0, 950, 60);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -385,9 +563,10 @@ public class Main extends javax.swing.JFrame {
     private void btnCircleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCircleActionPerformed
         // TODO add your handling code here:
         lblShapeFormula.setText(shapesFormula.circle());
-        Circle circle = new Circle();
-        desktopPaneMain.removeAll();
-        desktopPaneMain.add(circle).setVisible(true);
+        lblShapeName.setText("Circle");
+        lblSelectedShapeDiagram.setIcon(new ImageIcon(getClass().getResource("/Images/CircleDiag.png")));
+        lblGiven.setText("radius r=");
+        
     }//GEN-LAST:event_btnCircleActionPerformed
 
     private void btnEllipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEllipseActionPerformed
@@ -473,6 +652,30 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnHemisphereActionPerformed
 
+    private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
+        // TODO add your handling code here:
+        try {
+            //For Rounding: https://stackoverflow.com/questions/2808535/round-a-double-to-2-decimal-places
+            //For Double Handler: https://stackoverflow.com/questions/49466030/how-to-convert-double-values-to-string-in-a-text-field
+            double radius = Double.parseDouble(ftfGiven.getText());
+            double diameter = radius * 2;
+            double circumference = 2 * Math.PI * radius;
+            double area = Math.PI * radius * radius;
+
+            lblAnswer.setText("<html>Diameter = " + df.format(diameter) +
+                "<br>Circumference = " + df.format(circumference) +
+                "<br>Area = " + df.format(area) + "</html>");
+        } catch (NumberFormatException ex) {
+            lblAnswer.setText("Invalid radius. Please enter a number.");
+        }
+    }//GEN-LAST:event_btnCalculateActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        // TODO add your handling code here:
+        ftfGiven.setText("");
+        lblAnswer.setText("Answer");
+    }//GEN-LAST:event_btnClearActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -510,7 +713,9 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCalculate;
     private javax.swing.JButton btnCircle;
+    private javax.swing.JButton btnClear;
     private javax.swing.JButton btnCone;
     private javax.swing.JButton btnCube;
     private javax.swing.JButton btnCuboid;
@@ -531,12 +736,23 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btnTrapezoid;
     private javax.swing.JButton btnTriangle;
     private javax.swing.JButton btnTriangularPrism;
-    private javax.swing.JDesktopPane desktopPaneMain;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JFormattedTextField ftfGiven;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JLabel lblAnswer;
+    private javax.swing.JLabel lblGiven;
+    private javax.swing.JLabel lblSelectedShapeDiagram;
     private javax.swing.JLabel lblShapeFormula;
+    private javax.swing.JLabel lblShapeName;
     private javax.swing.JPanel panel2dShapes;
     private javax.swing.JPanel panel3dShapes;
     private javax.swing.JPanel panelApplicationLogo;
+    private javax.swing.JPanel panelShapeFormula;
+    private javax.swing.JPanel panelShapeName;
     private javax.swing.JTabbedPane panelShapeSelection;
     private javax.swing.JScrollPane scrollPanel2dShapes;
     private javax.swing.JScrollPane scrollPanel3dShapes;

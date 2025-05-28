@@ -12,7 +12,7 @@ public class FinalShapeCalculator {
         
         Main main = new Main();
         main.setVisible(true);
-        main.setSize(1150, 670);
+        main.setSize(1150, 690);
         main.setLocation(250, 160);
     }
 
